@@ -1,7 +1,7 @@
 console.log('app init...');
 
-const SimpleNodeServer = require('./simpleNodeServer');
-const SimpleRouting = require('./simpleRouting');
+const SimpleNodeServer = require('./app-start/simpleNodeServer');
+const SimpleRouting = require('./app-start/simpleRouting');
 
 let simpleRouting = new SimpleRouting();
 let requestHander = simpleRouting.buildRequestHander.bind(simpleRouting);

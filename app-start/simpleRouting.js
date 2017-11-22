@@ -1,6 +1,7 @@
-const HomeController = require('./controllers/home/homeController');
-const CatController = require('./controllers/cat/catController');
-const InternalResourcesController = require('./controllers/internalResourcesController');
+const HomeController = require('../controllers/home/homeController');
+const CatController = require('../controllers/cat/catController');
+const InternalResourcesController = require('../controllers/internalResourcesController');
+const SocketChatController = require('../controllers/socketChat/chatController');
 const _ = require('lodash');
 const url = require('url');
 
@@ -52,6 +53,9 @@ module.exports = class SimpleRouting {
         break;
       case '/cat':
         controllerFactory(CatController);
+        break;
+      case '/chat':
+        controllerFactory(SocketChatController);
         break;
       default:
         this.notFoundPage(request, response);
